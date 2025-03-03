@@ -1,178 +1,215 @@
-Below are many common problems that people encountered:
+### Erro em Tempo de Execução: CPUAllocator
 
-### RuntimeError: CPUAllocator
+Veja também a seção: **Swap do Sistema**
 
-See also the section: **System Swap**
+### Modelo carregou, depois pausou, depois nada acontece
 
-### Model loaded, then paused, then nothing happens
+Veja também a seção: **Swap do Sistema**
 
-See also the section: **System Swap**
+### Falha de Segmentação (Segmentation Fault)
 
-### Segmentation Fault
+Veja também a seção: **Swap do Sistema**
 
-See also the section: **System Swap**
+### Abortado
 
-### Aborted
+Veja também a seção: **Swap do Sistema**
 
-See also the section: **System Swap**
+### Núcleo Descartado (core dumped)
 
-### core dumped
-
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
 ### Killed
 
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
-### ^C, then quit
+### ^C, depois sai
 
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
-### adm 2816, then stuck
+### adm 2816, depois trava
 
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
-### Connection errored out
+### Erro de conexão
 
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
-### Error 1006
+### Erro 1006
 
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
 ### WinError 10060
 
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
-### Read timed out
+### Tempo de leitura esgotado (Read timed out)
 
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
-### No error, but the console close in a flash. Cannot find any error.
+### Nenhum erro, mas o console fecha rapidamente. Não é possível encontrar erro algum.
 
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
-### Model loading is extremely slow (more than 1 minute)
+### Carregamento de modelo extremamente lento (mais de 1 minuto)
 
-See also the section: **System Swap**
+Veja também a seção: **Swap do Sistema**
 
-### System Swap
+---
 
-All above problems are caused by the fact that you do not have enough System Swap.
+### Swap do Sistema
 
-Please make sure that you have at least 40GB System Swap. In fact, it does not need so much Swap, but 40Gb should be safe for you to run Fooocus in 100% success.
+Todos os problemas acima são causados pelo fato de você não ter Swap do Sistema suficiente.
 
-(If you have more than 64GB RAM, then *perhaps* you do not need any System Swap, but we are not exactly sure about this.)
+Certifique-se de ter pelo menos 40GB de Swap do Sistema. Na verdade, nem sempre precisa de tanto, mas 40GB deve ser suficiente para executar o Fooocus com 100% de sucesso.
 
-Also, if your system swap is on HDD, the speed of model loading will be very slow. Please try best to put system swap on SSD.
+(Se você tiver mais de 64GB de RAM, *talvez* não precise de Swap, mas não temos 100% de certeza disso.)
 
-If you are using Linux/Mac, please follow your provider's instructions to set Swap Space. Herein, the "provider" refers to Ubuntu official, CentOS official, Mac official, etc.
+Além disso, se seu swap estiver em um HDD, o carregamento do modelo será muito lento. Tente colocar o swap no SSD.
 
-If you are using Windows, you can set Swap here:
+#### Linux/Mac
+Se estiver usando Linux ou Mac, siga as instruções oficiais da sua distribuição ou sistema operacional (Ubuntu, CentOS, Mac etc.) para configurar o swap.
+
+#### Windows
+Se estiver usando Windows, você pode configurar o Swap aqui:
 
 ![swap](https://github.com/lllyasviel/Fooocus/assets/19834515/2a06b130-fe9b-4504-94f1-2763be4476e9)
 
-If you use both HDD and SSD, you *may* test some settings on the above step 7 to try best to put swap area on SSD, so that the speed of model loading will be faster.
+Se você tiver HDD e SSD, pode testar algumas configurações no passo 7 da imagem para tentar colocar o swap no SSD, acelerando o carregamento do modelo.
 
-**Important: Microsoft Windows 10/11 by default automate system swap for you so that you do not need to touch this dangerous setting. If you do not have enough system swap, just make sure that you have at least 40GB free space on each disk.** The Microsoft Windows 10/11 will automatically make swap areas for you.
+#### Observação Importante
+O Windows 10/11 automaticamente gerencia o swap para você, então normalmente você não precisa alterar essa configuração. Apenas garanta que há pelo menos 40GB de espaço livre em cada disco. O Windows irá ajustar automaticamente.
 
-Also, if you obtain Microsoft Windows 10/11 from some unofficial Chinese or Russian provider, they may have modified the default setting of system swap to advertise some "Enhanced Windows 10/11" (but actually they are just making things worse rather than improve things). In those cases, you may need to manually check if your system swap setting is consistent to the above screenshot.
+Se você obteve o Windows 10/11 de alguma fonte não oficial (como versões modificadas da China ou da Rússia), essas versões podem ter alterado a configuração padrão de swap para promover algo como "Windows Aprimorado". Nesse caso, você pode precisar verificar manualmente se suas configurações de swap estão corretas, conforme a imagem acima.
 
-Finally, note that you need to restart computer to activate any changes in system swap.
+E não se esqueça: é necessário reiniciar o computador para ativar as mudanças no swap.
+
+---
 
 ### MetadataIncompleteBuffer
 
-See also the section: **Model corrupted**
+Veja também a seção: **Modelo Corrompido**
 
 ### PytorchStreamReader failed
 
-See also the section: **Model corrupted**
+Veja também a seção: **Modelo Corrompido**
 
-### Model corrupted
+### Modelo Corrompido
 
-If you see Model Corrupted, then your model is corrupted. Fooocus will re-download corrupted models for you if your internet connection is good. Otherwise, you may also manually download models. You can find model url and their local location in the console each time a model download is requested.
+Se você receber essa mensagem, seu modelo está corrompido. O Fooocus tentará baixar novamente o modelo, se sua conexão estiver boa. Você também pode baixar manualmente — as URLs e locais de download aparecem no console quando um download é solicitado.
 
-### UserWarning: The operator 'aten::std_mean.correction' is not currently supported on the DML
+---
 
-This is a warning that you can ignore.
+### Aviso: 'aten::std_mean.correction' não é suportado no DML
 
-### Torch not compiled with CUDA enabled
+Esse é apenas um aviso, pode ignorar.
 
-You are not following the official installation guide. 
+---
 
-Please do not trust those wrong tutorials on the internet, and please only trust the official installation guide. 
+### Torch não compilado com suporte a CUDA
+
+Você não seguiu o guia de instalação oficial.
+
+Por favor, não confie em tutoriais aleatórios da internet. Siga apenas o guia oficial.
+
+---
 
 ### subprocess-exited-with-error
 
-Please use python 3.10
+Use Python 3.10.
 
-Also, you are not following the official installation guide. 
+E novamente, você não seguiu o guia de instalação oficial.
 
-Please do not trust those wrong tutorials on the internet, and please only trust the official installation guide. 
+---
 
 ### SSL: CERTIFICATE_VERIFY_FAILED
 
-Are you living in China? If yes, please consider turn off VPN, and/or try to download models manually.
+Você está na China? Se sim, desligue VPN e/ou baixe os modelos manualmente.
 
-If you get this error elsewhere in the world, then you may need to look at [this search](https://www.google.com/search?q=SSL+Certificate+Error). We cannot give very specific guide to fix this since the cause can vary a lot.
+Se você está fora da China, veja esta busca: [Erro de Certificado SSL](https://www.google.com/search?q=SSL+Certificate+Error). Não há uma solução única, já que a causa pode variar muito.
 
-### CUDA kernel errors might be asynchronously reported at some other API call
+---
 
-A very small amount of devices does have this problem. The cause can be complicated but usually can be resolved after following these steps:
+### Erros de Kernel CUDA podem aparecer assincronamente em outras chamadas de API
 
-1. Make sure that you are using official version and latest version installed from [here](https://github.com/lllyasviel/Fooocus#download). (Some forks and other versions are more likely to cause this problem.)
-2. Upgrade your Nvidia driver to the latest version. (Usually the version of your Nvidia driver should be 53X, not 3XX or 4XX.)
-3. If things still do not work, then perhaps it is a problem with CUDA 12. You can use CUDA 11 and Xformers to try to solve this problem. We have prepared all files for you, and please do NOT install any CUDA or other environment on you own. The only one official way to do this is: (1) Backup and delete your `python_embeded` folder (near the `run.bat`); (2) Download the "previous_old_xformers_env.7z" from the [release page](https://github.com/lllyasviel/Fooocus/releases/tag/release), decompress it, and put the newly extracted `python_embeded` folder near your `run.bat`; (3) run Fooocus.
-4. If it still does not work, please open an issue for us to take a look.
+Poucos dispositivos enfrentam esse problema. Geralmente, você resolve assim:
 
-### Found no NVIDIA driver on your system
+1. Use a versão oficial mais recente do Fooocus [aqui](https://github.com/lllyasviel/Fooocus#download). (Forks podem causar esse problema.)
+2. Atualize seu driver Nvidia para a versão mais recente (idealmente 53X ou superior, não 3XX ou 4XX).
+3. Se o erro persistir, pode ser incompatibilidade com CUDA 12. Tente usar CUDA 11 com Xformers. Para isso:
+    - Faça backup e exclua a pasta `python_embeded` (ao lado do `run.bat`).
+    - Baixe `previous_old_xformers_env.7z` da [página de releases](https://github.com/lllyasviel/Fooocus/releases/tag/release).
+    - Extraia e coloque a nova pasta `python_embeded` ao lado do `run.bat`.
+    - Execute o Fooocus.
+4. Se ainda assim não funcionar, abra uma issue.
 
-Please upgrade your Nvidia Driver. 
+---
 
-If you are using AMD, please follow official installation guide.
+### Nenhum driver Nvidia encontrado
 
-### NVIDIA driver too old
+Atualize seu driver Nvidia.
 
-Please upgrade your Nvidia Driver.
+Se você usa AMD, siga o guia de instalação oficial.
 
-### I am using Mac, the speed is very slow.
+---
 
-Some MAC users may need `--disable-offload-from-vram` to speed up model loading.
+### Driver Nvidia muito antigo
 
-Besides, the current support for MAC is very experimental, and we encourage users to also try Diffusionbee or Drawingthings: they are developed only for MAC.
+Atualize seu driver Nvidia.
 
-### I am using Nvidia with 8GB VRAM, I get CUDA Out Of Memory
+---
 
-It is a BUG. Please let us know as soon as possible. Please make an issue. See also [minimal requirements](https://github.com/lllyasviel/Fooocus/tree/main?tab=readme-ov-file#minimal-requirement).
+### Mac muito lento
 
-### I am using Nvidia with 6GB VRAM, I get CUDA Out Of Memory
+Alguns usuários de Mac precisam usar `--disable-offload-from-vram` para acelerar o carregamento.
 
-It is very likely a BUG. Please let us know as soon as possible. Please make an issue. See also [minimal requirements](https://github.com/lllyasviel/Fooocus/tree/main?tab=readme-ov-file#minimal-requirement).
+O suporte para Mac é experimental. Considere usar Diffusionbee ou Drawingthings.
 
-### I am using Nvidia with 4GB VRAM with Float16 support, like RTX 3050, I get CUDA Out Of Memory
+---
 
-It is a BUG. Please let us know as soon as possible. Please make an issue. See also [minimal requirements](https://github.com/lllyasviel/Fooocus/tree/main?tab=readme-ov-file#minimal-requirement).
+### Nvidia com 8GB VRAM: CUDA Out Of Memory
 
-### I am using Nvidia with 4GB VRAM without Float16 support, like GTX 960, I get CUDA Out Of Memory
+Provavelmente é um bug. Por favor, abra uma issue. Veja também [requisitos mínimos](https://github.com/StrJosedavi/fooocusIA/blob/main/readme.md#requisito-m%C3%ADnimo)
 
-Supporting GPU with 4GB VRAM without fp16 is extremely difficult, and you may not be able to use SDXL. However, you may still make an issue and let us know. You may try SD1.5 in Automatic1111 or other software for your device. See also [minimal requirements](https://github.com/lllyasviel/Fooocus/tree/main?tab=readme-ov-file#minimal-requirement).
+---
 
-### I am using AMD GPU on Windows, I get CUDA Out Of Memory
+### Nvidia com 6GB VRAM: CUDA Out Of Memory
 
-Current AMD support is very experimental for Windows. If you see this, then perhaps you cannot use Fooocus on this device on Windows.
+Provavelmente é um bug. Por favor, abra uma issue. Veja também [requisitos mínimos](https://github.com/StrJosedavi/fooocusIA/blob/main/readme.md#requisito-m%C3%ADnimo)
 
-However, if you re able to run SDXL on this same device on any other software, please let us know immediately, and we will support it as soon as possible. If no other software can enable your device to run SDXL on Windows, then we also do not have much to help.
+---
 
-Besides, the AMD support on Linux is slightly better because it will use ROCM. You may also try it if you are willing to change OS to linux. See also [minimal requirements](https://github.com/lllyasviel/Fooocus/tree/main?tab=readme-ov-file#minimal-requirement).
+### Nvidia com 4GB VRAM (com Float16, como RTX 3050): CUDA Out Of Memory
 
-### I am using AMD GPU on Linux, I get CUDA Out Of Memory
+Provavelmente é um bug. Por favor, abra uma issue. Veja também [requisitos mínimos](https://github.com/StrJosedavi/fooocusIA/blob/main/readme.md#requisito-m%C3%ADnimo)
 
-Current AMD support for Linux is better than that for Windows, but still, very experimental. However, if you re able to run SDXL on this same device on any other software, please let us know immediately, and we will support it as soon as possible. If no other software can enable your device to run SDXL on Windows, then we also do not have much to help. See also [minimal requirements](https://github.com/lllyasviel/Fooocus/tree/main?tab=readme-ov-file#minimal-requirement).
+---
 
-### I tried flags like --lowvram or --gpu-only or --bf16 or so on, and things are not getting any better?
+### Nvidia com 4GB VRAM (sem Float16, como GTX 960): CUDA Out Of Memory
 
-Please remove these flags if you are mislead by some wrong tutorials. In most cases these flags are making things worse and introducing more problems.
+Suporte para GPUs de 4GB sem Float16 é difícil. Talvez SDXL não funcione. Você pode tentar SD1.5 no Automatic1111. Veja também [requisitos mínimos](https://github.com/StrJosedavi/fooocusIA/blob/main/readme.md#requisito-m%C3%ADnimo)
 
-### Fooocus suddenly becomes very slow and I have not changed anything
+---
 
-Are you accidentally running two Fooocus at the same time?
+### AMD no Windows: CUDA Out Of Memory
+
+Suporte experimental. Se outros programas rodam SDXL no seu hardware, avise-nos para podermos adicionar suporte. 
+
+No Linux, o suporte AMD é um pouco melhor usando ROCm. Veja também [requisitos mínimos](https://github.com/StrJosedavi/fooocusIA/blob/main/readme.md#requisito-m%C3%ADnimo)
+
+---
+
+### AMD no Linux: CUDA Out Of Memory
+
+Suporte experimental. Se SDXL rodar em outro software no seu hardware, avise-nos. Veja também [requisitos mínimos](https://github.com/StrJosedavi/fooocusIA/blob/main/readme.md#requisito-m%C3%ADnimo)
+
+---
+
+### Flags como --lowvram ou --gpu-only não ajudam?
+
+Remova essas flags se seguiu tutoriais errados. Normalmente essas flags só pioram as coisas.
+
+---
+
+### Fooocus ficou muito lento do nada
+
+Verifique se você não está executando duas instâncias do Fooocus ao mesmo tempo.
