@@ -4,130 +4,130 @@
 
 # Fooocus
 
-[>>> Click Here to Install Fooocus <<<](#download)
+[>>> Clique Aqui para Instalar o Fooocus <<<](#download)
 
-Fooocus is an image generating software (based on [Gradio](https://www.gradio.app/) <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a>).
+Fooocus é um software de geração de imagens (baseado em [Gradio](https://www.gradio.app/) <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a>).
 
-Fooocus presents a rethinking of image generator designs. The software is offline, open source, and free, while at the same time, similar to many online image generators like Midjourney, the manual tweaking is not needed, and users only need to focus on the prompts and images. Fooocus has also simplified the installation: between pressing "download" and generating the first image, the number of needed mouse clicks is strictly limited to less than 3. Minimal GPU memory requirement is 4GB (Nvidia).
+Fooocus apresenta uma reimaginação do design de geradores de imagens. O software é offline, de código aberto e gratuito, e ao mesmo tempo, semelhante a muitos geradores de imagens online como o Midjourney, o ajuste manual não é necessário, e os usuários só precisam se concentrar nos prompts e nas imagens. O Fooocus também simplificou a instalação: entre pressionar "download" e gerar a primeira imagem, o número de cliques necessários é estritamente limitado a menos de 3. A memória mínima de GPU necessária é de 4GB (Nvidia).
 
-**Recently many fake websites exist on Google when you search “fooocus”. Do not trust those – here is the only official source of Fooocus.**
+**Recentemente, muitos sites falsos apareceram no Google quando você pesquisa por “fooocus”. Não confie neles – esta é a única fonte oficial do Fooocus.**
 
-# Project Status: Limited Long-Term Support (LTS) with Bug Fixes Only
+# Status do Projeto: Suporte de Longo Prazo (LTS) Limitado com Correções de Bugs Apenas
 
-The Fooocus project, built entirely on the **Stable Diffusion XL** architecture, is now in a state of limited long-term support (LTS) with bug fixes only. As the existing functionalities are considered as nearly free of programmartic issues (Thanks to [mashb1t](https://github.com/mashb1t)'s huge efforts), future updates will focus exclusively on addressing any bugs that may arise. 
+O projeto Fooocus, construído inteiramente na arquitetura **Stable Diffusion XL**, está agora em um estado de suporte de longo prazo (LTS) limitado, com correções de bugs apenas. Como as funcionalidades existentes são consideradas quase livres de problemas programáticos (graças aos enormes esforços de [mashb1t](https://github.com/mashb1t)), as atualizações futuras se concentrarão exclusivamente em corrigir quaisquer bugs que possam surgir.
 
-**There are no current plans to migrate to or incorporate newer model architectures.** However, this may change during time with the development of open-source community. For example, if the community converge to one single dominant method for image generation (which may really happen in half or one years given the current status), Fooocus may also migrate to that exact method.
+**Não há planos atuais para migrar ou incorporar arquiteturas de modelos mais novas.** No entanto, isso pode mudar com o tempo com o desenvolvimento da comunidade de código aberto. Por exemplo, se a comunidade convergir para um único método dominante para geração de imagens (o que pode realmente acontecer em meio ou um ano, dado o status atual), o Fooocus também pode migrar para esse método exato.
 
-For those interested in utilizing newer models such as **Flux**, we recommend exploring alternative platforms such as [WebUI Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge) (also from us), [ComfyUI/SwarmUI](https://github.com/comfyanonymous/ComfyUI). Additionally, several [excellent forks of Fooocus](https://github.com/lllyasviel/Fooocus?tab=readme-ov-file#forks) are available for experimentation.
+Para aqueles interessados em utilizar modelos mais novos, como **Flux**, recomendamos explorar plataformas alternativas como [WebUI Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge) (também de nossa autoria), [ComfyUI/SwarmUI](https://github.com/comfyanonymous/ComfyUI). Além disso, vários [excelentes forks do Fooocus](https://github.com/lllyasviel/Fooocus?tab=readme-ov-file#forks) estão disponíveis para experimentação.
 
-Again, recently many fake websites exist on Google when you search “fooocus”. Do **NOT** get Fooocus from those websites – this page is the only official source of Fooocus. We never have any website like such as “fooocus.com”, “fooocus.net”, “fooocus.co”, “fooocus.ai”, “fooocus.org”, “fooocus.pro”, “fooocus.one”. Those websites are ALL FAKE. **They have ABSOLUTLY no relationship to us. Fooocus is a 100% non-commercial offline open-source software.**
+Novamente, recentemente muitos sites falsos apareceram no Google quando você pesquisa por “fooocus”. **NÃO** obtenha o Fooocus desses sites – esta página é a única fonte oficial do Fooocus. Nunca tivemos nenhum site como “fooocus.com”, “fooocus.net”, “fooocus.co”, “fooocus.ai”, “fooocus.org”, “fooocus.pro”, “fooocus.one”. Esses sites são TODOS FALSOS. **Eles NÃO têm ABSOLUTAMENTE nenhuma relação conosco. Fooocus é um software 100% não comercial, offline e de código aberto.**
 
-# Features
+# Recursos
 
-Below is a quick list using Midjourney's examples:
+Abaixo está uma lista rápida usando exemplos do Midjourney:
 
 | Midjourney | Fooocus |
 | - | - |
-| High-quality text-to-image without needing much prompt engineering or parameter tuning. <br> (Unknown method) | High-quality text-to-image without needing much prompt engineering or parameter tuning. <br> (Fooocus has an offline GPT-2 based prompt processing engine and lots of sampling improvements so that results are always beautiful, no matter if your prompt is as short as “house in garden” or as long as 1000 words) |
-| V1 V2 V3 V4 | Input Image -> Upscale or Variation -> Vary (Subtle) / Vary (Strong)|
-| U1 U2 U3 U4 | Input Image -> Upscale or Variation -> Upscale (1.5x) / Upscale (2x) |
-| Inpaint / Up / Down / Left / Right (Pan) | Input Image -> Inpaint or Outpaint -> Inpaint / Up / Down / Left / Right <br> (Fooocus uses its own inpaint algorithm and inpaint models so that results are more satisfying than all other software that uses standard SDXL inpaint method/model) |
-| Image Prompt | Input Image -> Image Prompt <br> (Fooocus uses its own image prompt algorithm so that result quality and prompt understanding are more satisfying than all other software that uses standard SDXL methods like standard IP-Adapters or Revisions) |
-| --style | Advanced -> Style |
-| --stylize | Advanced -> Advanced -> Guidance |
-| --niji | [Multiple launchers: "run.bat", "run_anime.bat", and "run_realistic.bat".](https://github.com/lllyasviel/Fooocus/discussions/679) <br> Fooocus support SDXL models on Civitai <br> (You can google search “Civitai” if you do not know about it) |
-| --quality | Advanced -> Quality |
-| --repeat | Advanced -> Image Number |
-| Multi Prompts (::) | Just use multiple lines of prompts |
-| Prompt Weights | You can use " I am (happy:1.5)". <br> Fooocus uses A1111's reweighting algorithm so that results are better than ComfyUI if users directly copy prompts from Civitai. (Because if prompts are written in ComfyUI's reweighting, users are less likely to copy prompt texts as they prefer dragging files) <br> To use embedding, you can use "(embedding:file_name:1.1)" |
-| --no | Advanced -> Negative Prompt |
-| --ar | Advanced -> Aspect Ratios |
-| InsightFace | Input Image -> Image Prompt -> Advanced -> FaceSwap |
-| Describe | Input Image -> Describe |
+| Geração de texto para imagem de alta qualidade sem precisar de muita engenharia de prompt ou ajuste de parâmetros. <br> (Método desconhecido) | Geração de texto para imagem de alta qualidade sem precisar de muita engenharia de prompt ou ajuste de parâmetros. <br> (Fooocus tem um motor de processamento de prompt baseado em GPT-2 offline e muitas melhorias de amostragem, de modo que os resultados são sempre bonitos, não importa se seu prompt é tão curto quanto “casa no jardim” ou tão longo quanto 1000 palavras) |
+| V1 V2 V3 V4 | Imagem de Entrada -> Upscale ou Variação -> Vary (Sutil) / Vary (Forte)|
+| U1 U2 U3 U4 | Imagem de Entrada -> Upscale ou Variação -> Upscale (1.5x) / Upscale (2x) |
+| Inpaint / Up / Down / Left / Right (Pan) | Imagem de Entrada -> Inpaint ou Outpaint -> Inpaint / Up / Down / Left / Right <br> (Fooocus usa seu próprio algoritmo de inpaint e modelos de inpaint, de modo que os resultados são mais satisfatórios do que todos os outros softwares que usam o método/modelo de inpaint padrão do SDXL) |
+| Prompt de Imagem | Imagem de Entrada -> Prompt de Imagem <br> (Fooocus usa seu próprio algoritmo de prompt de imagem, de modo que a qualidade do resultado e a compreensão do prompt são mais satisfatórias do que todos os outros softwares que usam métodos SDXL padrão como IP-Adapters ou Revisions padrão) |
+| --style | Avançado -> Estilo |
+| --stylize | Avançado -> Avançado -> Orientação |
+| --niji | [Múltiplos lançadores: "run.bat", "run_anime.bat", e "run_realistic.bat".](https://github.com/lllyasviel/Fooocus/discussions/679) <br> Fooocus suporta modelos SDXL no Civitai <br> (Você pode pesquisar no Google “Civitai” se não souber sobre isso) |
+| --quality | Avançado -> Qualidade |
+| --repeat | Avançado -> Número de Imagens |
+| Múltiplos Prompts (::) | Basta usar várias linhas de prompts |
+| Pesos de Prompt | Você pode usar "Eu estou (feliz:1.5)". <br> Fooocus usa o algoritmo de reponderação do A1111, de modo que os resultados são melhores do que o ComfyUI se os usuários copiarem prompts diretamente do Civitai. (Porque se os prompts são escritos na reponderação do ComfyUI, os usuários são menos propensos a copiar textos de prompt, pois preferem arrastar arquivos) <br> Para usar embedding, você pode usar "(embedding:file_name:1.1)" |
+| --no | Avançado -> Prompt Negativo |
+| --ar | Avançado -> Proporções de Aspecto |
+| InsightFace | Imagem de Entrada -> Prompt de Imagem -> Avançado -> Troca de Rosto |
+| Descrever | Imagem de Entrada -> Descrever |
 
-Below is a quick list using LeonardoAI's examples:
+Abaixo está uma lista rápida usando exemplos do LeonardoAI:
 
 | LeonardoAI | Fooocus |
 | - | - |
-| Prompt Magic | Advanced -> Style -> Fooocus V2 |
-| Advanced Sampler Parameters (like Contrast/Sharpness/etc) | Advanced -> Advanced -> Sampling Sharpness / etc |
-| User-friendly ControlNets | Input Image -> Image Prompt -> Advanced |
+| Prompt Magic | Avançado -> Estilo -> Fooocus V2 |
+| Parâmetros Avançados de Amostragem (como Contraste/Nitidez/etc) | Avançado -> Avançado -> Nitidez de Amostragem / etc |
+| ControlNets Amigáveis ao Usuário | Imagem de Entrada -> Prompt de Imagem -> Avançado |
 
-Also, [click here to browse the advanced features.](https://github.com/lllyasviel/Fooocus/discussions/117)
+Além disso, [clique aqui para explorar os recursos avançados.](https://github.com/lllyasviel/Fooocus/discussions/117)
 
 # Download
 
 ### Windows
 
-You can directly download Fooocus with:
+Você pode baixar o Fooocus diretamente com:
 
-**[>>> Click here to download <<<](https://github.com/lllyasviel/Fooocus/releases/download/v2.5.0/Fooocus_win64_2-5-0.7z)**
+**[>>> Clique aqui para baixar <<<](https://github.com/lllyasviel/Fooocus/releases/download/v2.5.0/Fooocus_win64_2-5-0.7z)**
 
-After you download the file, please uncompress it and then run the "run.bat".
+Depois de baixar o arquivo, descompacte-o e execute o "run.bat".
 
 ![image](https://github.com/lllyasviel/Fooocus/assets/19834515/c49269c4-c274-4893-b368-047c401cc58c)
 
-The first time you launch the software, it will automatically download models:
+Na primeira vez que você iniciar o software, ele baixará automaticamente os modelos:
 
-1. It will download [default models](#models) to the folder "Fooocus\models\checkpoints" given different presets. You can download them in advance if you do not want automatic download.
-2. Note that if you use inpaint, at the first time you inpaint an image, it will download [Fooocus's own inpaint control model from here](https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint_v26.fooocus.patch) as the file "Fooocus\models\inpaint\inpaint_v26.fooocus.patch" (the size of this file is 1.28GB).
+1. Ele baixará [modelos padrão](#modelos-padrão) para a pasta "Fooocus\models\checkpoints" de acordo com diferentes predefinições. Você pode baixá-los antecipadamente se não quiser o download automático.
+2. Observe que, se você usar inpaint, na primeira vez que fizer inpaint em uma imagem, ele baixará [o modelo de controle de inpaint do Fooocus daqui](https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint_v26.fooocus.patch) como o arquivo "Fooocus\models\inpaint\inpaint_v26.fooocus.patch" (o tamanho deste arquivo é 1.28GB).
 
-After Fooocus 2.1.60, you will also have `run_anime.bat` and `run_realistic.bat`. They are different model presets (and require different models, but they will be automatically downloaded). [Check here for more details](https://github.com/lllyasviel/Fooocus/discussions/679).
+Após o Fooocus 2.1.60, você também terá `run_anime.bat` e `run_realistic.bat`. Eles são diferentes predefinições de modelos (e exigem modelos diferentes, mas eles serão baixados automaticamente). [Confira aqui para mais detalhes](https://github.com/lllyasviel/Fooocus/discussions/679).
 
-After Fooocus 2.3.0 you can also switch presets directly in the browser. Keep in mind to add these arguments if you want to change the default behavior:
-* Use `--disable-preset-selection` to disable preset selection in the browser.
-* Use `--always-download-new-model` to download missing models on preset switch. Default is fallback to `previous_default_models` defined in the corresponding preset, also see terminal output.
+Após o Fooocus 2.3.0, você também pode alternar predefinições diretamente no navegador. Lembre-se de adicionar esses argumentos se quiser alterar o comportamento padrão:
+* Use `--disable-preset-selection` para desativar a seleção de predefinições no navegador.
+* Use `--always-download-new-model` para baixar modelos ausentes ao alternar predefinições. O padrão é voltar para `previous_default_models` definido na predefinição correspondente, veja também a saída do terminal.
 
 ![image](https://github.com/lllyasviel/Fooocus/assets/19834515/d386f817-4bd7-490c-ad89-c1e228c23447)
 
-If you already have these files, you can copy them to the above locations to speed up installation.
+Se você já tiver esses arquivos, pode copiá-los para os locais acima para acelerar a instalação.
 
-Note that if you see **"MetadataIncompleteBuffer" or "PytorchStreamReader"**, then your model files are corrupted. Please download models again.
+Observe que, se você vir **"MetadataIncompleteBuffer" ou "PytorchStreamReader"**, seus arquivos de modelo estão corrompidos. Baixe os modelos novamente.
 
-Below is a test on a relatively low-end laptop with **16GB System RAM** and **6GB VRAM** (Nvidia 3060 laptop). The speed on this machine is about 1.35 seconds per iteration. Pretty impressive – nowadays laptops with 3060 are usually at very acceptable price.
+Abaixo está um teste em um laptop relativamente básico com **16GB de RAM do sistema** e **6GB de VRAM** (Nvidia 3060 laptop). A velocidade nesta máquina é de cerca de 1,35 segundos por iteração. Muito impressionante – atualmente, laptops com 3060 geralmente têm um preço muito acessível.
 
 ![image](https://github.com/lllyasviel/Fooocus/assets/19834515/938737a5-b105-4f19-b051-81356cb7c495)
 
-Besides, recently many other software report that Nvidia driver above 532 is sometimes 10x slower than Nvidia driver 531. If your generation time is very long, consider download [Nvidia Driver 531 Laptop](https://www.nvidia.com/download/driverResults.aspx/199991/en-us/) or [Nvidia Driver 531 Desktop](https://www.nvidia.com/download/driverResults.aspx/199990/en-us/).
+Além disso, recentemente muitos outros softwares relataram que o driver Nvidia acima da versão 532 é às vezes 10x mais lento que o driver Nvidia 531. Se o tempo de geração for muito longo, considere baixar [Nvidia Driver 531 Laptop](https://www.nvidia.com/download/driverResults.aspx/199991/en-us/) ou [Nvidia Driver 531 Desktop](https://www.nvidia.com/download/driverResults.aspx/199990/en-us/).
 
-Note that the minimal requirement is **4GB Nvidia GPU memory (4GB VRAM)** and **8GB system memory (8GB RAM)**. This requires using Microsoft’s Virtual Swap technique, which is automatically enabled by your Windows installation in most cases, so you often do not need to do anything about it. However, if you are not sure, or if you manually turned it off (would anyone really do that?), or **if you see any "RuntimeError: CPUAllocator"**, you can enable it here:
+Observe que o requisito mínimo é **4GB de memória de GPU Nvidia (4GB VRAM)** e **8GB de memória do sistema (8GB RAM)**. Isso requer o uso da técnica de Troca Virtual da Microsoft, que é automaticamente habilitada pela sua instalação do Windows na maioria dos casos, então você geralmente não precisa fazer nada sobre isso. No entanto, se você não tiver certeza, ou se você desativou manualmente (alguém realmente faria isso?), ou **se você vir qualquer "RuntimeError: CPUAllocator"**, você pode habilitá-lo aqui:
 
 <details>
-<summary>Click here to see the image instructions. </summary>
+<summary>Clique aqui para ver as instruções de imagem. </summary>
 
 ![image](https://github.com/lllyasviel/Fooocus/assets/19834515/2a06b130-fe9b-4504-94f1-2763be4476e9)
 
-**And make sure that you have at least 40GB free space on each drive if you still see "RuntimeError: CPUAllocator" !**
+**E certifique-se de que você tem pelo menos 40GB de espaço livre em cada unidade se ainda vir "RuntimeError: CPUAllocator"!**
 
 </details>
 
-Please open an issue if you use similar devices but still cannot achieve acceptable performances.
+Abra um problema se você usar dispositivos semelhantes, mas ainda não conseguir alcançar desempenhos aceitáveis.
 
-Note that the [minimal requirement](#minimal-requirement) for different platforms is different.
+Observe que o [requisito mínimo](#requisito-mínimo) para diferentes plataformas é diferente.
 
-See also the common problems and troubleshoots [here](troubleshoot.md).
+Veja também os problemas comuns e soluções [aqui](troubleshoot.md).
 
 ### Colab
 
-(Last tested - 2024 Aug 12 by [mashb1t](https://github.com/mashb1t))
+(Último teste - 12 de agosto de 2024 por [mashb1t](https://github.com/mashb1t))
 
 | Colab | Info
 | --- | --- |
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lllyasviel/Fooocus/blob/main/fooocus_colab.ipynb) | Fooocus Official
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lllyasviel/Fooocus/blob/main/fooocus_colab.ipynb) | Fooocus Oficial
 
-In Colab, you can modify the last line to `!python entry_with_update.py --share --always-high-vram` or `!python entry_with_update.py --share --always-high-vram --preset anime` or `!python entry_with_update.py --share --always-high-vram --preset realistic` for Fooocus Default/Anime/Realistic Edition.
+No Colab, você pode modificar a última linha para `!python entry_with_update.py --share --always-high-vram` ou `!python entry_with_update.py --share --always-high-vram --preset anime` ou `!python entry_with_update.py --share --always-high-vram --preset realistic` para a Edição Padrão/Anime/Realista do Fooocus.
 
-You can also change the preset in the UI. Please be aware that this may lead to timeouts after 60 seconds. If this is the case, please wait until the download has finished, change the preset to initial and back to the one you've selected or reload the page.
+Você também pode alterar a predefinição na interface do usuário. Esteja ciente de que isso pode levar a timeouts após 60 segundos. Se for o caso, aguarde até que o download seja concluído, altere a predefinição para inicial e volte para a que você selecionou ou recarregue a página.
 
-Note that this Colab will disable refiner by default because Colab free's resources are relatively limited (and some "big" features like image prompt may cause free-tier Colab to disconnect). We make sure that basic text-to-image is always working on free-tier Colab.
+Observe que este Colab desativará o refiner por padrão, pois os recursos do Colab free são relativamente limitados (e alguns recursos "grandes" como prompt de imagem podem fazer com que o Colab de nível gratuito se desconecte). Garantimos que a geração básica de texto para imagem sempre funcione no Colab de nível gratuito.
 
-Using `--always-high-vram` shifts resource allocation from RAM to VRAM and achieves the overall best balance between performance, flexibility and stability on the default T4 instance. Please find more information [here](https://github.com/lllyasviel/Fooocus/pull/1710#issuecomment-1989185346).
+Usar `--always-high-vram` desloca a alocação de recursos da RAM para a VRAM e alcança o melhor equilíbrio geral entre desempenho, flexibilidade e estabilidade na instância T4 padrão. Encontre mais informações [aqui](https://github.com/lllyasviel/Fooocus/pull/1710#issuecomment-1989185346).
 
-Thanks to [camenduru](https://github.com/camenduru) for the template!
+Agradecemos a [camenduru](https://github.com/camenduru) pelo template!
 
-### Linux (Using Anaconda)
+### Linux (Usando Anaconda)
 
-If you want to use Anaconda/Miniconda, you can
+Se você quiser usar Anaconda/Miniconda, você pode
 
     git clone https://github.com/lllyasviel/Fooocus.git
     cd Fooocus
@@ -135,21 +135,21 @@ If you want to use Anaconda/Miniconda, you can
     conda activate fooocus
     pip install -r requirements_versions.txt
 
-Then download the models: download [default models](#models) to the folder "Fooocus\models\checkpoints". **Or let Fooocus automatically download the models** using the launcher:
+Em seguida, baixe os modelos: baixe [modelos padrão](#modelos-padrão) para a pasta "Fooocus\models\checkpoints". **Ou deixe o Fooocus baixar automaticamente os modelos** usando o lançador:
 
     conda activate fooocus
     python entry_with_update.py
 
-Or, if you want to open a remote port, use
+Ou, se você quiser abrir uma porta remota, use
 
     conda activate fooocus
     python entry_with_update.py --listen
 
-Use `python entry_with_update.py --preset anime` or `python entry_with_update.py --preset realistic` for Fooocus Anime/Realistic Edition.
+Use `python entry_with_update.py --preset anime` ou `python entry_with_update.py --preset realistic` para a Edição Anime/Realista do Fooocus.
 
-### Linux (Using Python Venv)
+### Linux (Usando Python Venv)
 
-Your Linux needs to have **Python 3.10** installed, and let's say your Python can be called with the command **python3** with your venv system working; you can
+Seu Linux precisa ter **Python 3.10** instalado, e digamos que seu Python pode ser chamado com o comando **python3** com seu sistema venv funcionando; você pode
 
     git clone https://github.com/lllyasviel/Fooocus.git
     cd Fooocus
@@ -157,166 +157,166 @@ Your Linux needs to have **Python 3.10** installed, and let's say your Python ca
     source fooocus_env/bin/activate
     pip install -r requirements_versions.txt
 
-See the above sections for model downloads. You can launch the software with:
+Veja as seções acima para o download dos modelos. Você pode iniciar o software com:
 
     source fooocus_env/bin/activate
     python entry_with_update.py
 
-Or, if you want to open a remote port, use
+Ou, se você quiser abrir uma porta remota, use
 
     source fooocus_env/bin/activate
     python entry_with_update.py --listen
 
-Use `python entry_with_update.py --preset anime` or `python entry_with_update.py --preset realistic` for Fooocus Anime/Realistic Edition.
+Use `python entry_with_update.py --preset anime` ou `python entry_with_update.py --preset realistic` para a Edição Anime/Realista do Fooocus.
 
-### Linux (Using native system Python)
+### Linux (Usando Python nativo do sistema)
 
-If you know what you are doing, and your Linux already has **Python 3.10** installed, and your Python can be called with the command **python3** (and Pip with **pip3**), you can
+Se você sabe o que está fazendo, e seu Linux já tem **Python 3.10** instalado, e seu Python pode ser chamado com o comando **python3** (e Pip com **pip3**), você pode
 
     git clone https://github.com/lllyasviel/Fooocus.git
     cd Fooocus
     pip3 install -r requirements_versions.txt
 
-See the above sections for model downloads. You can launch the software with:
+Veja as seções acima para o download dos modelos. Você pode iniciar o software com:
 
     python3 entry_with_update.py
 
-Or, if you want to open a remote port, use
+Ou, se você quiser abrir uma porta remota, use
 
     python3 entry_with_update.py --listen
 
-Use `python entry_with_update.py --preset anime` or `python entry_with_update.py --preset realistic` for Fooocus Anime/Realistic Edition.
+Use `python entry_with_update.py --preset anime` ou `python entry_with_update.py --preset realistic` para a Edição Anime/Realista do Fooocus.
 
-### Linux (AMD GPUs)
+### Linux (GPUs AMD)
 
-Note that the [minimal requirement](#minimal-requirement) for different platforms is different.
+Observe que o [requisito mínimo](#requisito-mínimo) para diferentes plataformas é diferente.
 
-Same with the above instructions. You need to change torch to the AMD version
+O mesmo que as instruções acima. Você precisa mudar o torch para a versão AMD
 
     pip uninstall torch torchvision torchaudio torchtext functorch xformers 
     pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.6
 
-AMD is not intensively tested, however. The AMD support is in beta.
+O suporte à AMD não é intensivamente testado, no entanto. O suporte à AMD está em beta.
 
-Use `python entry_with_update.py --preset anime` or `python entry_with_update.py --preset realistic` for Fooocus Anime/Realistic Edition.
+Use `python entry_with_update.py --preset anime` ou `python entry_with_update.py --preset realistic` para a Edição Anime/Realista do Fooocus.
 
-### Windows (AMD GPUs)
+### Windows (GPUs AMD)
 
-Note that the [minimal requirement](#minimal-requirement) for different platforms is different.
+Observe que o [requisito mínimo](#requisito-mínimo) para diferentes plataformas é diferente.
 
-Same with Windows. Download the software and edit the content of `run.bat` as:
+O mesmo que o Windows. Baixe o software e edite o conteúdo de `run.bat` como:
 
     .\python_embeded\python.exe -m pip uninstall torch torchvision torchaudio torchtext functorch xformers -y
     .\python_embeded\python.exe -m pip install torch-directml
     .\python_embeded\python.exe -s Fooocus\entry_with_update.py --directml
     pause
 
-Then run the `run.bat`.
+Em seguida, execute o `run.bat`.
 
-AMD is not intensively tested, however. The AMD support is in beta.
+O suporte à AMD não é intensivamente testado, no entanto. O suporte à AMD está em beta.
 
-For AMD, use `.\python_embeded\python.exe Fooocus\entry_with_update.py --directml --preset anime` or `.\python_embeded\python.exe Fooocus\entry_with_update.py --directml --preset realistic` for Fooocus Anime/Realistic Edition.
+Para AMD, use `.\python_embeded\python.exe Fooocus\entry_with_update.py --directml --preset anime` ou `.\python_embeded\python.exe Fooocus\entry_with_update.py --directml --preset realistic` para a Edição Anime/Realista do Fooocus.
 
 ### Mac
 
-Note that the [minimal requirement](#minimal-requirement) for different platforms is different.
+Observe que o [requisito mínimo](#requisito-mínimo) para diferentes plataformas é diferente.
 
-Mac is not intensively tested. Below is an unofficial guideline for using Mac. You can discuss problems [here](https://github.com/lllyasviel/Fooocus/pull/129).
+O Mac não é intensivamente testado. Abaixo está um guia não oficial para usar o Mac. Você pode discutir problemas [aqui](https://github.com/lllyasviel/Fooocus/pull/129).
 
-You can install Fooocus on Apple Mac silicon (M1 or M2) with macOS 'Catalina' or a newer version. Fooocus runs on Apple silicon computers via [PyTorch](https://pytorch.org/get-started/locally/) MPS device acceleration. Mac Silicon computers don't come with a dedicated graphics card, resulting in significantly longer image processing times compared to computers with dedicated graphics cards.
+Você pode instalar o Fooocus no Apple Mac silicon (M1 ou M2) com macOS 'Catalina' ou uma versão mais recente. O Fooocus é executado em computadores Apple silicon via aceleração de dispositivo [PyTorch](https://pytorch.org/get-started/locally/) MPS. Computadores Mac Silicon não vêm com uma placa gráfica dedicada, resultando em tempos de processamento de imagem significativamente mais longos em comparação com computadores com placas gráficas dedicadas.
 
-1. Install the conda package manager and pytorch nightly. Read the [Accelerated PyTorch training on Mac](https://developer.apple.com/metal/pytorch/) Apple Developer guide for instructions. Make sure pytorch recognizes your MPS device.
-1. Open the macOS Terminal app and clone this repository with `git clone https://github.com/lllyasviel/Fooocus.git`.
-1. Change to the new Fooocus directory, `cd Fooocus`.
-1. Create a new conda environment, `conda env create -f environment.yaml`.
-1. Activate your new conda environment, `conda activate fooocus`.
-1. Install the packages required by Fooocus, `pip install -r requirements_versions.txt`.
-1. Launch Fooocus by running `python entry_with_update.py`. (Some Mac M2 users may need `python entry_with_update.py --disable-offload-from-vram` to speed up model loading/unloading.) The first time you run Fooocus, it will automatically download the Stable Diffusion SDXL models and will take a significant amount of time, depending on your internet connection.
+1. Instale o gerenciador de pacotes conda e o pytorch nightly. Leia o guia [Accelerated PyTorch training on Mac](https://developer.apple.com/metal/pytorch/) da Apple Developer para obter instruções. Certifique-se de que o pytorch reconheça seu dispositivo MPS.
+1. Abra o aplicativo Terminal do macOS e clone este repositório com `git clone https://github.com/lllyasviel/Fooocus.git`.
+1. Mude para o novo diretório Fooocus, `cd Fooocus`.
+1. Crie um novo ambiente conda, `conda env create -f environment.yaml`.
+1. Ative seu novo ambiente conda, `conda activate fooocus`.
+1. Instale os pacotes necessários para o Fooocus, `pip install -r requirements_versions.txt`.
+1. Inicie o Fooocus executando `python entry_with_update.py`. (Alguns usuários de Mac M2 podem precisar de `python entry_with_update.py --disable-offload-from-vram` para acelerar o carregamento/descarregamento do modelo.) Na primeira vez que você executar o Fooocus, ele baixará automaticamente os modelos Stable Diffusion SDXL e levará um tempo significativo, dependendo da sua conexão com a internet.
 
-Use `python entry_with_update.py --preset anime` or `python entry_with_update.py --preset realistic` for Fooocus Anime/Realistic Edition.
+Use `python entry_with_update.py --preset anime` ou `python entry_with_update.py --preset realistic` para a Edição Anime/Realista do Fooocus.
 
 ### Docker
 
-See [docker.md](docker.md)
+Veja [docker.md](docker.md)
 
-### Download Previous Version
+### Baixar Versão Anterior
 
-See the guidelines [here](https://github.com/lllyasviel/Fooocus/discussions/1405).
+Veja as diretrizes [aqui](https://github.com/lllyasviel/Fooocus/discussions/1405).
 
-## Minimal Requirement
+## Requisito Mínimo
 
-Below is the minimal requirement for running Fooocus locally. If your device capability is lower than this spec, you may not be able to use Fooocus locally. (Please let us know, in any case, if your device capability is lower but Fooocus still works.)
+Abaixo está o requisito mínimo para executar o Fooocus localmente. Se a capacidade do seu dispositivo for menor que esta especificação, você pode não conseguir usar o Fooocus localmente. (Por favor, nos informe, em qualquer caso, se a capacidade do seu dispositivo for menor, mas o Fooocus ainda funcionar.)
 
-| Operating System  | GPU                          | Minimal GPU Memory           | Minimal System Memory     | [System Swap](troubleshoot.md) | Note                                                                       |
+| Sistema Operacional  | GPU                          | Memória Mínima de GPU           | Memória Mínima do Sistema     | [Troca do Sistema](troubleshoot.md) | Nota                                                                       |
 |-------------------|------------------------------|------------------------------|---------------------------|--------------------------------|----------------------------------------------------------------------------|
-| Windows/Linux     | Nvidia RTX 4XXX              | 4GB                          | 8GB                       | Required                       | fastest                                                                    |
-| Windows/Linux     | Nvidia RTX 3XXX              | 4GB                          | 8GB                       | Required                       | usually faster than RTX 2XXX                                               |
-| Windows/Linux     | Nvidia RTX 2XXX              | 4GB                          | 8GB                       | Required                       | usually faster than GTX 1XXX                                               |
-| Windows/Linux     | Nvidia GTX 1XXX              | 8GB (&ast; 6GB uncertain)    | 8GB                       | Required                       | only marginally faster than CPU                                            |
-| Windows/Linux     | Nvidia GTX 9XX               | 8GB                          | 8GB                       | Required                       | faster or slower than CPU                                                  |
-| Windows/Linux     | Nvidia GTX < 9XX             | Not supported                | /                         | /                              | /                                                                          |
-| Windows           | AMD GPU                      | 8GB    (updated 2023 Dec 30) | 8GB                       | Required                       | via DirectML (&ast; ROCm is on hold), about 3x slower than Nvidia RTX 3XXX |
-| Linux             | AMD GPU                      | 8GB                          | 8GB                       | Required                       | via ROCm, about 1.5x slower than Nvidia RTX 3XXX                           |
-| Mac               | M1/M2 MPS                    | Shared                       | Shared                    | Shared                         | about 9x slower than Nvidia RTX 3XXX                                       |
-| Windows/Linux/Mac | only use CPU                 | 0GB                          | 32GB                      | Required                       | about 17x slower than Nvidia RTX 3XXX                                      |
+| Windows/Linux     | Nvidia RTX 4XXX              | 4GB                          | 8GB                       | Necessária                       | mais rápido                                                                    |
+| Windows/Linux     | Nvidia RTX 3XXX              | 4GB                          | 8GB                       | Necessária                       | geralmente mais rápido que RTX 2XXX                                               |
+| Windows/Linux     | Nvidia RTX 2XXX              | 4GB                          | 8GB                       | Necessária                       | geralmente mais rápido que GTX 1XXX                                               |
+| Windows/Linux     | Nvidia GTX 1XXX              | 8GB (&ast; 6GB incerto)    | 8GB                       | Necessária                       | apenas marginalmente mais rápido que a CPU                                            |
+| Windows/Linux     | Nvidia GTX 9XX               | 8GB                          | 8GB                       | Necessária                       | mais rápido ou mais lento que a CPU                                                  |
+| Windows/Linux     | Nvidia GTX < 9XX             | Não suportado                | /                         | /                              | /                                                                          |
+| Windows           | AMD GPU                      | 8GB    (atualizado em 30 de dezembro de 2023) | 8GB                       | Necessária                       | via DirectML (&ast; ROCm está em espera), cerca de 3x mais lento que Nvidia RTX 3XXX |
+| Linux             | AMD GPU                      | 8GB                          | 8GB                       | Necessária                       | via ROCm, cerca de 1.5x mais lento que Nvidia RTX 3XXX                           |
+| Mac               | M1/M2 MPS                    | Compartilhada                       | Compartilhada                    | Compartilhada                         | cerca de 9x mais lento que Nvidia RTX 3XXX                                       |
+| Windows/Linux/Mac | apenas CPU                 | 0GB                          | 32GB                      | Necessária                       | cerca de 17x mais lento que Nvidia RTX 3XXX                                      |
 
-&ast; AMD GPU ROCm (on hold): The AMD is still working on supporting ROCm on Windows.
+&ast; AMD GPU ROCm (em espera): A AMD ainda está trabalhando no suporte ao ROCm no Windows.
 
-&ast; Nvidia GTX 1XXX 6GB uncertain: Some people report 6GB success on GTX 10XX, but some other people report failure cases.
+&ast; Nvidia GTX 1XXX 6GB incerto: Algumas pessoas relatam sucesso com 6GB em GTX 10XX, mas outras relatam casos de falha.
 
-*Note that Fooocus is only for extremely high quality image generating. We will not support smaller models to reduce the requirement and sacrifice result quality.*
+*Observe que o Fooocus é apenas para geração de imagens de qualidade extremamente alta. Não vamos suportar modelos menores para reduzir o requisito e sacrificar a qualidade do resultado.*
 
-## Troubleshoot
+## Solução de Problemas
 
-See the common problems [here](troubleshoot.md).
+Veja os problemas comuns [aqui](troubleshoot.md).
 
-## Default Models
+## Modelos Padrão
 <a name="models"></a>
 
-Given different goals, the default models and configs of Fooocus are different:
+Dependendo de diferentes objetivos, os modelos e configurações padrão do Fooocus são diferentes:
 
-| Task      | Windows | Linux args | Main Model                  | Refiner | Config                                                                         |
+| Tarefa      | Windows | Argumentos do Linux | Modelo Principal                  | Refiner | Configuração                                                                         |
 |-----------| --- | --- |-----------------------------| --- |--------------------------------------------------------------------------------|
-| General   | run.bat |  | juggernautXL_v8Rundiffusion | not used | [here](https://github.com/lllyasviel/Fooocus/blob/main/presets/default.json)   |
-| Realistic | run_realistic.bat | --preset realistic | realisticStockPhoto_v20     | not used | [here](https://github.com/lllyasviel/Fooocus/blob/main/presets/realistic.json) |
-| Anime     | run_anime.bat | --preset anime | animaPencilXL_v500          | not used | [here](https://github.com/lllyasviel/Fooocus/blob/main/presets/anime.json)     |
+| Geral   | run.bat |  | juggernautXL_v8Rundiffusion | não usado | [aqui](https://github.com/lllyasviel/Fooocus/blob/main/presets/default.json)   |
+| Realista | run_realistic.bat | --preset realistic | realisticStockPhoto_v20     | não usado | [aqui](https://github.com/lllyasviel/Fooocus/blob/main/presets/realistic.json) |
+| Anime     | run_anime.bat | --preset anime | animaPencilXL_v500          | não usado | [aqui](https://github.com/lllyasviel/Fooocus/blob/main/presets/anime.json)     |
 
-Note that the download is **automatic** - you do not need to do anything if the internet connection is okay. However, you can download them manually if you (or move them from somewhere else) have your own preparation.
+Observe que o download é **automático** - você não precisa fazer nada se a conexão com a internet estiver OK. No entanto, você pode baixá-los manualmente se você (ou movê-los de outro lugar) tiver sua própria preparação.
 
-## UI Access and Authentication
-In addition to running on localhost, Fooocus can also expose its UI in two ways: 
-* Local UI listener: use `--listen` (specify port e.g. with `--port 8888`). 
-* API access: use `--share` (registers an endpoint at `.gradio.live`).
+## Acesso à UI e Autenticação
+Além de ser executado no localhost, o Fooocus também pode expor sua UI de duas maneiras: 
+* Ouvinte de UI local: use `--listen` (especifique a porta, por exemplo, com `--port 8888`). 
+* Acesso à API: use `--share` (registra um endpoint em `.gradio.live`).
 
-In both ways the access is unauthenticated by default. You can add basic authentication by creating a file called `auth.json` in the main directory, which contains a list of JSON objects with the keys `user` and `pass` (see example in [auth-example.json](./auth-example.json)).
+Em ambos os casos, o acesso não é autenticado por padrão. Você pode adicionar autenticação básica criando um arquivo chamado `auth.json` no diretório principal, que contém uma lista de objetos JSON com as chaves `user` e `pass` (veja o exemplo em [auth-example.json](./auth-example.json)).
 
-## List of "Hidden" Tricks
+## Lista de Truques "Ocultos"
 <a name="tech_list"></a>
 
 <details>
-<summary>Click to see a list of tricks. Those are based on SDXL and are not very up-to-date with latest models.</summary>
+<summary>Clique para ver uma lista de truques. Eles são baseados no SDXL e não estão muito atualizados com os modelos mais recentes.</summary>
 
-1. GPT2-based [prompt expansion as a dynamic style "Fooocus V2".](https://github.com/lllyasviel/Fooocus/discussions/117#raw) (similar to Midjourney's hidden pre-processing and "raw" mode, or the LeonardoAI's Prompt Magic).
-2. Native refiner swap inside one single k-sampler. The advantage is that the refiner model can now reuse the base model's momentum (or ODE's history parameters) collected from k-sampling to achieve more coherent sampling. In Automatic1111's high-res fix and ComfyUI's node system, the base model and refiner use two independent k-samplers, which means the momentum is largely wasted, and the sampling continuity is broken. Fooocus uses its own advanced k-diffusion sampling that ensures seamless, native, and continuous swap in a refiner setup. (Update Aug 13: Actually, I discussed this with Automatic1111 several days ago, and it seems that the “native refiner swap inside one single k-sampler” is [merged]( https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/12371) into the dev branch of webui. Great!)
-3. Negative ADM guidance. Because the highest resolution level of XL Base does not have cross attentions, the positive and negative signals for XL's highest resolution level cannot receive enough contrasts during the CFG sampling, causing the results to look a bit plastic or overly smooth in certain cases. Fortunately, since the XL's highest resolution level is still conditioned on image aspect ratios (ADM), we can modify the adm on the positive/negative side to compensate for the lack of CFG contrast in the highest resolution level. (Update Aug 16, the IOS App [Draw Things](https://apps.apple.com/us/app/draw-things-ai-generation/id6444050820) will support Negative ADM Guidance. Great!)
-4. We implemented a carefully tuned variation of Section 5.1 of ["Improving Sample Quality of Diffusion Models Using Self-Attention Guidance"](https://arxiv.org/pdf/2210.00939.pdf). The weight is set to very low, but this is Fooocus's final guarantee to make sure that the XL will never yield an overly smooth or plastic appearance (examples [here](https://github.com/lllyasviel/Fooocus/discussions/117#sharpness)). This can almost eliminate all cases for which XL still occasionally produces overly smooth results, even with negative ADM guidance. (Update 2023 Aug 18, the Gaussian kernel of SAG is changed to an anisotropic kernel for better structure preservation and fewer artifacts.)
-5. We modified the style templates a bit and added the "cinematic-default".
-6. We tested the "sd_xl_offset_example-lora_1.0.safetensors" and it seems that when the lora weight is below 0.5, the results are always better than XL without lora.
-7. The parameters of samplers are carefully tuned.
-8. Because XL uses positional encoding for generation resolution, images generated by several fixed resolutions look a bit better than those from arbitrary resolutions (because the positional encoding is not very good at handling int numbers that are unseen during training). This suggests that the resolutions in UI may be hard coded for best results.
-9. Separated prompts for two different text encoders seem unnecessary. Separated prompts for the base model and refiner may work, but the effects are random, and we refrain from implementing this.
-10. The DPM family seems well-suited for XL since XL sometimes generates overly smooth texture, but the DPM family sometimes generates overly dense detail in texture. Their joint effect looks neutral and appealing to human perception.
-11. A carefully designed system for balancing multiple styles as well as prompt expansion.
-12. Using automatic1111's method to normalize prompt emphasizing. This significantly improves results when users directly copy prompts from civitai.
-13. The joint swap system of the refiner now also supports img2img and upscale in a seamless way.
-14. CFG Scale and TSNR correction (tuned for SDXL) when CFG is bigger than 10.
+1. Expansão de prompt baseada em [GPT2 como um estilo dinâmico "Fooocus V2"](https://github.com/lllyasviel/Fooocus/discussions/117#raw). (semelhante ao pré-processamento oculto do Midjourney e ao modo "raw", ou ao Prompt Magic do LeonardoAI).
+2. Troca de refiner nativa dentro de um único k-sampler. A vantagem é que o modelo refiner agora pode reutilizar o momentum (ou parâmetros de histórico do ODE) coletado do k-sampling para alcançar uma amostragem mais coerente. No high-res fix do Automatic1111 e no sistema de nós do ComfyUI, o modelo base e o refiner usam dois k-samplers independentes, o que significa que o momentum é amplamente desperdiçado e a continuidade da amostragem é quebrada. O Fooocus usa seu próprio k-diffusion sampling avançado que garante uma troca de refiner nativa, contínua e sem interrupções. (Atualização em 13 de agosto: Na verdade, discuti isso com o Automatic1111 há alguns dias, e parece que a “troca de refiner nativa dentro de um único k-sampler” foi [mesclada]( https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/12371) no branch de desenvolvimento do webui. Ótimo!)
+3. Orientação ADM negativa. Como o nível de maior resolução do XL Base não tem atenções cruzadas, os sinais positivos e negativos para o nível de maior resolução do XL não podem receber contrastes suficientes durante a amostragem CFG, fazendo com que os resultados pareçam um pouco plásticos ou excessivamente suaves em certos casos. Felizmente, como o nível de maior resolução do XL ainda é condicionado às proporções de imagem (ADM), podemos modificar o adm no lado positivo/negativo para compensar a falta de contraste CFG no nível de maior resolução. (Atualização em 16 de agosto, o aplicativo IOS [Draw Things](https://apps.apple.com/us/app/draw-things-ai-generation/id6444050820) suportará Orientação ADM Negativa. Ótimo!)
+4. Implementamos uma variação cuidadosamente ajustada da Seção 5.1 de ["Improving Sample Quality of Diffusion Models Using Self-Attention Guidance"](https://arxiv.org/pdf/2210.00939.pdf). O peso é definido como muito baixo, mas esta é a garantia final do Fooocus para garantir que o XL nunca produza uma aparência excessivamente suave ou plástica (exemplos [aqui](https://github.com/lllyasviel/Fooocus/discussions/117#sharpness)). Isso pode quase eliminar todos os casos em que o XL ainda ocasionalmente produz resultados excessivamente suaves, mesmo com orientação ADM negativa. (Atualização em 18 de agosto de 2023, o kernel Gaussiano do SAG foi alterado para um kernel anisotrópico para melhor preservação da estrutura e menos artefatos.)
+5. Modificamos um pouco os templates de estilo e adicionamos o "cinematic-default".
+6. Testamos o "sd_xl_offset_example-lora_1.0.safetensors" e parece que quando o peso do lora está abaixo de 0.5, os resultados são sempre melhores do que o XL sem lora.
+7. Os parâmetros dos samplers são cuidadosamente ajustados.
+8. Como o XL usa codificação posicional para a resolução de geração, as imagens geradas por várias resoluções fixas parecem um pouco melhores do que aquelas de resoluções arbitrárias (porque a codificação posicional não é muito boa em lidar com números inteiros que não foram vistos durante o treinamento). Isso sugere que as resoluções na UI podem ser codificadas para os melhores resultados.
+9. Prompts separados para dois diferentes codificadores de texto parecem desnecessários. Prompts separados para o modelo base e refiner podem funcionar, mas os efeitos são aleatórios, e nos abstemos de implementar isso.
+10. A família DPM parece bem adequada para o XL, já que o XL às vezes gera texturas excessivamente suaves, mas a família DPM às vezes gera texturas excessivamente densas em detalhes. Seu efeito conjunto parece neutro e atraente para a percepção humana.
+11. Um sistema cuidadosamente projetado para equilibrar múltiplos estilos, bem como a expansão de prompt.
+12. Usando o método do automatic1111 para normalizar a ênfase do prompt. Isso melhora significativamente os resultados quando os usuários copiam prompts diretamente do civitai.
+13. O sistema de troca conjunta do refiner agora também suporta img2img e upscale de forma contínua.
+14. Escala CFG e correção TSNR (ajustada para SDXL) quando CFG é maior que 10.
 </details>
 
-## Customization
+## Personalização
 
-After the first time you run Fooocus, a config file will be generated at `Fooocus\config.txt`. This file can be edited to change the model path or default parameters.
+Após a primeira vez que você executar o Fooocus, um arquivo de configuração será gerado em `Fooocus\config.txt`. Este arquivo pode ser editado para alterar o caminho do modelo ou os parâmetros padrão.
 
-For example, an edited `Fooocus\config.txt` (this file will be generated after the first launch) may look like this:
+Por exemplo, um `Fooocus\config.txt` editado (este arquivo será gerado após o primeiro lançamento) pode parecer com isso:
 
 ```json
 {
@@ -346,15 +346,15 @@ For example, an edited `Fooocus\config.txt` (this file will be generated after t
 }
 ```
 
-Many other keys, formats, and examples are in `Fooocus\config_modification_tutorial.txt` (this file will be generated after the first launch).
+Muitos outros parâmetros, formatos e exemplos estão em `Fooocus\config_modification_tutorial.txt` (esse arquivo será gerado após o primeiro lançamento).
 
-Consider twice before you really change the config. If you find yourself breaking things, just delete `Fooocus\config.txt`. Fooocus will go back to default.
+Pense duas vezes antes de realmente modificar a configuração. Se você acabar quebrando alguma coisa, basta excluir `Fooocus\config.txt`. O Fooocus retornará ao padrão.
 
-A safer way is just to try "run_anime.bat" or "run_realistic.bat" - they should already be good enough for different tasks.
+Uma forma mais segura é apenas executar `"run_anime.bat"` ou `"run_realistic.bat"` – eles já devem ser bons o suficiente para diferentes tarefas.
 
-~Note that `user_path_config.txt` is deprecated and will be removed soon.~ (Edit: it is already removed.)
+~Observe que o arquivo `user_path_config.txt` está obsoleto e será removido em breve.~ (Edit: ele já foi removido.)
 
-### All CMD Flags
+### Todos os parâmetros de linha de comando (CMD Flags)
 
 ```
 entry_with_update.py  [-h] [--listen [IP]] [--port PORT]
@@ -394,93 +394,98 @@ entry_with_update.py  [-h] [--listen [IP]] [--port PORT]
                       [--rebuild-hash-cache [CPU_NUM_THREADS]]
 ```
 
-## Inline Prompt Features
 
-### Wildcards
+## Recursos de Prompt Inline
 
-Example prompt: `__color__ flower`
+### Curingas (Wildcards)
 
-Processed for positive and negative prompt.
+Exemplo de prompt: `__color__ flower`
 
-Selects a random wildcard from a predefined list of options, in this case the `wildcards/color.txt` file. 
-The wildcard will be replaced with a random color (randomness based on seed). 
-You can also disable randomness and process a wildcard file from top to bottom by enabling the checkbox `Read wildcards in order` in Developer Debug Mode.
+Processado para prompt positivo e negativo.
 
-Wildcards can be nested and combined, and multiple wildcards can be used in the same prompt (example see `wildcards/color_flower.txt`).
+Seleciona um curinga aleatório de uma lista predefinida de opções, nesse caso, do arquivo `wildcards/color.txt`. O curinga será substituído por uma cor aleatória (baseada na seed). Você também pode desativar a aleatoriedade e processar o arquivo de curinga de cima para baixo, ativando a caixa de seleção `Read wildcards in order` no modo Developer Debug.
 
-### Array Processing
+Curingas podem ser aninhados e combinados, e múltiplos curingas podem ser usados no mesmo prompt (exemplo em `wildcards/color_flower.txt`).
 
-Example prompt: `[[red, green, blue]] flower`
+### Processamento de Arrays
 
-Processed only for positive prompt.
+Exemplo de prompt: `[[red, green, blue]] flower`
 
-Processes the array from left to right, generating a separate image for each element in the array. In this case 3 images would be generated, one for each color.
-Increase the image number to 3 to generate all 3 variants.
+Processado apenas para o prompt positivo.
 
-Arrays can not be nested, but multiple arrays can be used in the same prompt.
-Does support inline LoRAs as array elements!
+Processa o array da esquerda para a direita, gerando uma imagem separada para cada elemento do array. Neste caso, seriam geradas 3 imagens, uma para cada cor. Aumente o número de imagens para 3 para gerar todas as variantes.
 
-### Inline LoRAs
+Arrays não podem ser aninhados, mas múltiplos arrays podem ser usados no mesmo prompt. Suporta LoRAs inline como elementos do array.
 
-Example prompt: `flower <lora:sunflowers:1.2>`
+### LoRAs Inline
 
-Processed only for positive prompt.
+Exemplo de prompt: `flower <lora:sunflowers:1.2>`
 
-Applies a LoRA to the prompt. The LoRA file must be located in the `models/loras` directory.
+Processado apenas para o prompt positivo.
 
-## Advanced Features
+Aplica um LoRA ao prompt. O arquivo LoRA deve estar localizado no diretório `models/loras`.
 
-[Click here to browse the advanced features.](https://github.com/lllyasviel/Fooocus/discussions/117)
+### Recursos Avançados
 
-## Forks
+[Clique aqui para ver os recursos avançados.](https://github.com/lllyasviel/Fooocus/discussions/117)
 
-Below are some Forks to Fooocus:
+### Forks
 
-| Fooocus' forks |
+Abaixo estão alguns forks do Fooocus:
+
+| Forks do Fooocus |
 | - |
-| [fenneishi/Fooocus-Control](https://github.com/fenneishi/Fooocus-Control) </br>[runew0lf/RuinedFooocus](https://github.com/runew0lf/RuinedFooocus) </br> [MoonRide303/Fooocus-MRE](https://github.com/MoonRide303/Fooocus-MRE) </br> [mashb1t/Fooocus](https://github.com/mashb1t/Fooocus) </br> and so on ... |
+| [fenneishi/Fooocus-Control](https://github.com/fenneishi/Fooocus-Control) </br>[runew0lf/RuinedFooocus](https://github.com/runew0lf/RuinedFooocus) </br> [MoonRide303/Fooocus-MRE](https://github.com/MoonRide303/Fooocus-MRE) </br> [mashb1t/Fooocus](https://github.com/mashb1t/Fooocus) </br> e outros... |
 
-## Thanks
+### Agradecimentos
 
-Many thanks to [twri](https://github.com/twri) and [3Diva](https://github.com/3Diva) and [Marc K3nt3L](https://github.com/K3nt3L) for creating additional SDXL styles available in Fooocus. 
+Muito obrigado a [twri](https://github.com/twri), [3Diva](https://github.com/3Diva) e [Marc K3nt3L](https://github.com/K3nt3L) por criarem estilos adicionais de SDXL disponíveis no Fooocus.
 
-The project starts from a mixture of [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) and [ComfyUI](https://github.com/comfyanonymous/ComfyUI) codebases.
+O projeto começou a partir de uma mistura dos códigos do [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) e [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
 
-Also, thanks [daswer123](https://github.com/daswer123) for contributing the Canvas Zoom!
+Também agradecemos [daswer123](https://github.com/daswer123) por contribuir com o recurso de Zoom da Tela!
 
-## Update Log
+### Log de Atualizações
 
-The log is [here](update_log.md).
+O log está disponível [aqui](update_log.md).
 
-## Localization/Translation/I18N
+### Localização/Tradução/I18N
 
-You can put json files in the `language` folder to translate the user interface.
+Você pode colocar arquivos JSON na pasta `language` para traduzir a interface do usuário.
 
-For example, below is the content of `Fooocus/language/example.json`:
+Por exemplo, abaixo está o conteúdo de `Fooocus/language/example.json`:
 
 ```json
 {
-  "Generate": "生成",
-  "Input Image": "入力画像",
-  "Advanced": "고급",
-  "SAI 3D Model": "SAI 3D Modèle"
+    "Generate": "Gerar",
+    "Input Image": "Imagem de Entrada",
+    "Advanced": "Avançado",
+    "SAI 3D Model": "Modelo SAI 3D"
 }
 ```
 
-If you add `--language example` arg, Fooocus will read `Fooocus/language/example.json` to translate the UI.
+Se você adicionar a flag `--language example`, o Fooocus lerá `Fooocus/language/example.json` para traduzir a interface.
 
-For example, you can edit the ending line of Windows `run.bat` as
+Por exemplo, você pode editar a linha final do run.bat do Windows para:
 
-    .\python_embeded\python.exe -s Fooocus\entry_with_update.py --language example
+```
+.\python_embeded\python.exe -s Fooocus\entry_with_update.py --language example
+```
 
-Or `run_anime.bat` as
+Ou editar run_anime.bat para:
 
-    .\python_embeded\python.exe -s Fooocus\entry_with_update.py --language example --preset anime
+```
+.\python_embeded\python.exe -s Fooocus\entry_with_update.py --language example --preset anime
+```
 
-Or `run_realistic.bat` as
+Ou editar run_realistic.bat para:
 
-    .\python_embeded\python.exe -s Fooocus\entry_with_update.py --language example --preset realistic
+```
+.\python_embeded\python.exe -s Fooocus\entry_with_update.py --language example --preset realistic
+```
 
-For practical translation, you may create your own file like `Fooocus/language/jp.json` or `Fooocus/language/cn.json` and then use flag `--language jp` or `--language cn`. Apparently, these files do not exist now. **We need your help to create these files!**
+Para uma tradução completa, você pode criar seu próprio arquivo como `Fooocus/language/pt-br.json` e usar a flag `--language pt-br`.
 
-Note that if no `--language` is given and at the same time `Fooocus/language/default.json` exists, Fooocus will always load `Fooocus/language/default.json` for translation. By default, the file `Fooocus/language/default.json` does not exist.
+Se nenhum `--language` for especificado e existir `Fooocus/language/default.json`, o Fooocus sempre carregará `Fooocus/language/default.json` para a tradução. Por padrão, esse arquivo `default.json` não existe.
+
+
