@@ -1,11 +1,11 @@
-## Running unit tests
+## Executando testes unitários
 
-Native python:
+Python nativo:
 ```
 python -m unittest tests/
 ```
 
-Embedded python (Windows zip file installation method):
+Python embutido (método de instalação via arquivo zip no Windows):
 ```
 ..\python_embeded\python.exe -m unittest
 ```
