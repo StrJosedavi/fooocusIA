@@ -1,22 +1,22 @@
-# Fooocus on Docker
+# Fooocus no Docker
 
-The docker image is based on NVIDIA CUDA 12.4 and PyTorch 2.1, see [Dockerfile](Dockerfile) and [requirements_docker.txt](requirements_docker.txt) for details.
+A imagem Docker é baseada no NVIDIA CUDA 12.4 e PyTorch 2.1. Veja o [Dockerfile](Dockerfile) e o [requirements_docker.txt](requirements_docker.txt) para detalhes.
 
-## Requirements
+## Requisitos
 
-- A computer with specs good enough to run Fooocus, and proprietary Nvidia drivers
-- Docker, Docker Compose, or Podman
+- Um computador com especificações suficientes para rodar o Fooocus, e drivers proprietários da Nvidia
+- Docker, Docker Compose ou Podman
 
-## Quick start
+## Início rápido
 
-**More information in the [notes](#notes).**
+**Mais informações nas [notas](#notas).**
 
-### Running with Docker Compose
+### Executar com Docker Compose
 
-1. Clone this repository
-2. Run the docker container with `docker compose up`.
+1. Clone este repositório
+2. Execute o container Docker com `docker compose up`.
 
-### Running with Docker
+### Executar com Docker
 
 ```sh
 docker run -p 7865:7865 -v fooocus-data:/content/data -it \
@@ -37,7 +37,8 @@ docker run -p 7865:7865 -v fooocus-data:/content/data -it \
 -e path_outputs=/content/app/outputs/ \
 ghcr.io/lllyasviel/fooocus
 ```
-### Running with Podman
+
+### Executar com Podman
 
 ```sh
 podman run -p 7865:7865 -v fooocus-data:/content/data -it \
@@ -59,73 +60,72 @@ podman run -p 7865:7865 -v fooocus-data:/content/data -it \
 ghcr.io/lllyasviel/fooocus
 ```
 
-When you see the message  `Use the app with http://0.0.0.0:7865/` in the console, you can access the URL in your browser.
+Quando você ver a mensagem `Use the app with http://0.0.0.0:7865/` no console, você pode acessar esse endereço no seu navegador.
 
-Your models and outputs are stored in the `fooocus-data` volume, which, depending on OS, is stored in `/var/lib/docker/volumes/` (or `~/.local/share/containers/storage/volumes/` when using `podman`).
+Seus modelos e saídas (outputs) são armazenados no volume `fooocus-data`, que geralmente fica em `/var/lib/docker/volumes/` (ou `~/.local/share/containers/storage/volumes/` se estiver usando `podman`).
 
-## Building the container locally
+## Construindo a imagem localmente
 
-Clone the repository first, and open a terminal in the folder.
+Clone o repositório primeiro e abra um terminal na pasta.
 
-Build with `docker`:
+Para construir com `docker`:
 ```sh
 docker build . -t fooocus
 ```
 
-Build with `podman`:
+Para construir com `podman`:
 ```sh
 podman build . -t fooocus
 ```
 
-## Details
+## Detalhes
 
-### Update the container manually (`docker compose`)
+### Atualizar o container manualmente (docker compose)
 
-When you are using `docker compose up` continuously, the container is not updated to the latest version of Fooocus automatically.
-Run `git pull` before executing `docker compose build --no-cache` to build an image with the latest Fooocus version.
-You can then start it with `docker compose up`
+Se você estiver usando `docker compose up` continuamente, o container não será atualizado automaticamente para a última versão do Fooocus.
+Execute `git pull` antes de rodar `docker compose build --no-cache` para construir a imagem com a versão mais recente do Fooocus.
+Depois, você pode iniciar com `docker compose up`.
 
-### Import models, outputs
+### Importar modelos e outputs
 
-If you want to import files from models or the outputs folder, you can add the following bind mounts in the [docker-compose.yml](docker-compose.yml) or your preferred method of running the container:
+Se você quiser importar arquivos de modelos ou da pasta outputs, pode adicionar os seguintes "bind mounts" no [docker-compose.yml](docker-compose.yml) ou no seu método preferido de rodar o container:
 ```
-#- ./models:/import/models   # Once you import files, you don't need to mount again.
-#- ./outputs:/import/outputs  # Once you import files, you don't need to mount again.
+#- ./models:/import/models   # Depois de importar os arquivos, você não precisa montar de novo.
+#- ./outputs:/import/outputs  # Depois de importar os arquivos, você não precisa montar de novo.
 ```
-After running the container, your files will be copied into `/content/data/models` and `/content/data/outputs`
-Since `/content/data` is a persistent volume folder, your files will be persisted even when you re-run the container without the above mounts.
+Após rodar o container, seus arquivos serão copiados para `/content/data/models` e `/content/data/outputs`.
+Como `/content/data` é uma pasta de volume persistente, seus arquivos serão preservados mesmo se você reexecutar o container sem essas montagens.
 
+### Caminhos dentro do container
 
-### Paths inside the container
-
-|Path|Details|
+|Caminho|Detalhes|
 |-|-|
-|/content/app|The application stored folder|
-|/content/app/models.org|Original 'models' folder.<br> Files are copied to the '/content/app/models' which is symlinked to '/content/data/models' every time the container boots. (Existing files will not be overwritten.) |
-|/content/data|Persistent volume mount point|
-|/content/data/models|The folder is symlinked to '/content/app/models'|
-|/content/data/outputs|The folder is symlinked to '/content/app/outputs'|
+|/content/app|Pasta onde o aplicativo é armazenado|
+|/content/app/models.org|Pasta "models" original.<br>Os arquivos são copiados para `/content/app/models`, que é um link simbólico para `/content/data/models` toda vez que o container inicia. (Arquivos existentes não serão sobrescritos.)|
+|/content/data|Ponto de montagem do volume persistente|
+|/content/data/models|Essa pasta é linkada para `/content/app/models`|
+|/content/data/outputs|Essa pasta é linkada para `/content/app/outputs`|
 
-### Environments
+### Variáveis de ambiente
 
-You can change `config.txt` parameters by using environment variables.
-**The priority of using the environments is higher than the values defined in `config.txt`, and they will be saved to the `config_modification_tutorial.txt`**
+Você pode alterar parâmetros do `config.txt` usando variáveis de ambiente.
+**O valor definido nas variáveis de ambiente tem prioridade sobre o valor definido no `config.txt`, e será salvo no `config_modification_tutorial.txt`**
 
-Docker specified environments are there. They are used by 'entrypoint.sh'
-|Environment|Details|
+As variáveis específicas do Docker estão abaixo. Elas são usadas pelo `entrypoint.sh`:
+|Variável|Detalhes|
 |-|-|
-|DATADIR|'/content/data' location.|
-|CMDARGS|Arguments for [entry_with_update.py](entry_with_update.py) which is called by [entrypoint.sh](entrypoint.sh)|
-|config_path|'config.txt' location|
-|config_example_path|'config_modification_tutorial.txt' location|
-|HF_MIRROR| huggingface mirror site domain| 
+|DATADIR|Localização de `/content/data`.|
+|CMDARGS|Argumentos para o [entry_with_update.py](entry_with_update.py), chamado pelo [entrypoint.sh](entrypoint.sh)|
+|config_path|Localização do `config.txt`|
+|config_example_path|Localização do `config_modification_tutorial.txt`|
+|HF_MIRROR|Domínio do site mirror do Huggingface|
 
-You can also use the same json key names and values explained in the 'config_modification_tutorial.txt' as the environments.
-See examples in the [docker-compose.yml](docker-compose.yml)
+Você também pode usar as mesmas chaves e valores JSON explicados em `config_modification_tutorial.txt` como variáveis de ambiente.
+Veja exemplos no [docker-compose.yml](docker-compose.yml)
 
-## Notes
+## Notas
 
-- Please keep 'path_outputs' under '/content/app'. Otherwise, you may get an error when you open the history log.
-- Docker on Mac/Windows still has issues in the form of slow volume access when you use "bind mount" volumes. Please refer to [this article](https://docs.docker.com/storage/volumes/#use-a-volume-with-docker-compose) for not using "bind mount".
-- The MPS backend (Metal Performance Shaders, Apple Silicon M1/M2/etc.) is not yet supported in Docker, see https://github.com/pytorch/pytorch/issues/81224
-- You can also use `docker compose up -d` to start the container detached and connect to the logs with `docker compose logs -f`. This way you can also close the terminal and keep the container running.
+- Por favor, mantenha `path_outputs` dentro de `/content/app`. Caso contrário, você pode ter erro ao abrir o histórico.
+- Docker no Mac/Windows ainda possui problemas de lentidão no acesso a volumes quando você usa volumes do tipo "bind mount". Consulte [este artigo](https://docs.docker.com/storage/volumes/#use-a-volume-with-docker-compose) para não usar "bind mount".
+- O backend MPS (Metal Performance Shaders, Apple Silicon M1/M2/etc.) ainda não é suportado no Docker. Veja https://github.com/pytorch/pytorch/issues/81224
+- Você também pode usar `docker compose up -d` para iniciar o container em modo "detached" e acompanhar os logs com `docker compose logs -f`. Assim, você pode fechar o terminal e manter o container rodando.
